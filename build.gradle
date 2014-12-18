@@ -9,9 +9,10 @@
 
 
 apply plugin: 'groovy'
+// apply from: 'http://repository-javafx-gradle-plugin.forge.cloudbees.com/snapshot/javafx.plugin'
 apply plugin: 'application'
 
-mainClassName = 'Main'
+mainClassName = 'simplebrowser.Main'
 
 repositories {
   jcenter()
@@ -19,5 +20,7 @@ repositories {
 
 dependencies {
   compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.3.8'
+  compile group: 'org.codehaus.groovyfx', name: 'groovyfx', version: '0.4.0'
+  compile files("${System.properties['java.home']}/jre/lib/ext/jfxrt.jar")
 }
 
